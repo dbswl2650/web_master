@@ -14,3 +14,6 @@ function deleteFunc() {
   alert('삭제버튼을 클릭했습니다.');
 }
 
+// comsole.log()
+// document.write()
+document.write('<ul><li>Applle</li><li>Banana</li></ul>');
