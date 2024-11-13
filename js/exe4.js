@@ -7,17 +7,25 @@ document.querySelector('#inputValue').remove(); // 요소(element) 삭제
 document.querySelector('#addBtn').remove();// 요소(element) 삭제
 document.querySelector('span').remove();// 요소(element) 삭제
 
-let score = [];
+let score = []; // 10, 20, 30, 40, 50
 let sum = 0;
-let avrage = 0;
-let max = 0;
+let average = 0;
 let min = 0;
+let max = 0;
+
 for (let i = 0; i < 5; i++) {
-  let test =prompt('1~5 번점수 입력하세요!');
+  let test =parseInt(prompt('1~5 번점수 입력하세요!'));
   score.push(test);
   sum += score[i];
-
+  average = sum /score.length;
+  if (score[i] > max) {
+    max = score[i]
+  }
+  if (min == 0) {
+    min = score[i]
+  }
+  else if(min > score[i]) {
+    min = score[i]
+  }
 }
-
-
-console.log('exe4.js');
+console.log(`우리반 평균은 ${average} 이고, 최고점은 ${max} 이고, 최저점은 ${min} 이다.`);
