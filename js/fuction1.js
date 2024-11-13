@@ -20,3 +20,8 @@ function sum(param1, param2) {
   let result = param1 + param2;
   return result;
 }
+
+// 배열을 매개값으로 받아서 요소중에서 제일큰값을 구하는 함수.
+// getMaxValue(배열)
+
+console.log( getMaxValue(numAry1));
