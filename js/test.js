@@ -13,6 +13,7 @@ for (let i = 1; i < 10; i++) {
 
 let numAry = [23, 66, 92, 71, 52, 49];
 let sum =0;
+
 for (let i = 0; i < numAry.length; i++) {
   if(numAry[i] % 2 == 1) {
     sum += numAry[i];
