@@ -9,14 +9,15 @@ document.querySelector('span').remove();// 요소(element) 삭제
 
 let score = [];
 let sum = 0;
-let avrage = 0;
+let average = 0;
 let max = 0;
 let min = 0;
 for (let i = 0; i < 5; i++) {
   let test =prompt('1~5 번점수 입력하세요!');
   score.push(test);
   sum += score[i];
-
+  average = sum /score.length;
+  if(max)
 }
 
 
