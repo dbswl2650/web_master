@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품주문서</title>
+  <style>
+    #container{
+      width: 600px;
+      margin: 0 auto;
+    }
+    label{
+      float: left;
+      width: 200px;
+    }
+    form li{
+      list-style: none;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>상품주문서</h1>
+    <form action="" method="post" name="order">
+      <fieldset>
+        <legend>개인정보</legend>
+        <ul>
+          <li>
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="여백없이 입력">
+          </li>
+          <li>
+            <label for="tell">연락처</label>
+            <input type="tel" id="tell" name="tell" placeholder="연락가능한 번호">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>배송지정보</legend>
+        <ul>
+          <li>
+            <label for="adress">주소</label>
+            <input type="text" id="adress" name="adress">
+          </li>
+          <li>
+            <label for="tell">연락처</label>
+            <input type="tel" id="tell" name="tell">
+          </li>
+          <li>
+            <label for="memo">메모</label>
+            <textarea id="memo" cols="60" rows="5"></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>주문정보</legend>
+        <ul>
+          <li>
+            <label for="kme"><input type="checkbox" name="jumun" value="kmelon"> 경주성주 참외(5kg)</label>
+            <input type="number" min="0" max="10" value="0">Box
+          </li>
+          <li>
+            <label for="grape"><input type="checkbox" name="jumun" value="grape"> 경북영천 포도(5kg)</label>
+            <input type="number" min="0" max="10" value="0">Box
+          </li>
+          <li>
+            <label for="wme"><input type="checkbox" name="jumun" value="watermelon"> 경북봉화 수박(5kg)</label>
+            <input type="number" min="0" max="10" value="0">Box
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <button type="submit">주문하기</button>
+        <button type="reset">다시작성</button>
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>

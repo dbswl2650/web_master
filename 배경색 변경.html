@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변경</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        li {
+            display: inline-block;
+            padding: 10px;
+            list-style: none;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        #result {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul>
+            <li>green</li>
+            <li>orange</li>
+            <li>purple</li>
+        </ul>
+        <div id="result" style="background: blueviolet;"></div>
+    </div>
+
+    <script>
+        // 내가 한 기능구현.
+        // document.querySelector('li:nth-of-type(1)').addEventListener('click', function(){
+        //     document.querySelector('#result').style.background = 'green'
+        // });
+        // document.querySelector('li:nth-of-type(2)').addEventListener('click', function(){
+        //     document.querySelector('#result').style.background = 'orange'
+        // });
+        // document.querySelector('li:nth-of-type(3)').addEventListener('click', function(){
+        //     document.querySelector('#result').style.background = 'purple'
+        // });
+
+        // 교수님이 하신 기능구현.
+        // function changeColor(color) {
+        //     document.querySelector('#result').style.background = color;
+        // }
+        // document.querySelector('li:nth-of-type(1)')
+        //     .addEventListener('click', (e) => changeColor(e.target.innerHTML));
+        // document.querySelector('li:nth-of-type(2)')
+        //     .addEventListener('click', (e) => changeColor(e.target.innerHTML));
+        // document.querySelector('li:nth-of-type(3)')
+        //     .addEventListener('click', (e) => changeColor(e.target.innerHTML));
+
+        // 또 다른 기능구현. (배열문과 반복문 사용).
+        function changeColor(color) {
+             document.querySelector('#result').style.background = color;
+        }
+        // console.log(document.querySelectorAll('li'));
+        //querySelectorAll('선택자') => 선택자를 만족하는 모든요소.
+        let list = document.querySelectorAll('li'); // [li, li, li]
+        for(let i=0; i < list.length; i++) {
+            list[i].addEventListener('click', (e) => changeColor(e.target.innerHTML));
+        }
+    </script>
+</body>
+
+</html>

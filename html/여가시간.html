@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여가시간</title>
+  <style>
+    #container{
+      width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+    .travel-card{
+      box-sizing: border-box;
+      width: 250px;
+      height: 340px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      text-align: center;
+      float: left;
+      margin: 25px;
+    }
+    img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    .vsible{
+      /* visibility: hidden; */
+      /* display: none; */
+      opacity: 0.5;
+    }
+    .vsible:hover{
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>여가시간즐기기</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, iusto?</p>
+    <div class="travel-card">
+      <img src="img/도심.jpg" alt="도심">
+      <h4>도심 투어</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, consectetur.</p>
+    </div>
+    <div class="travel-card vsible">
+      <img src="img/바다.jpg" alt="바다">
+      <h4>바다 즐기기</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, consectetur.</p>
+    </div>
+    <div class="travel-card">
+      <img src="img/산.jpg" alt="산">
+      <h4>등산 도전하기</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, consectetur.</p>
+    </div>
+    <div class="travel-card">
+      <img src="img/관광지.jpg" alt="관광지">
+      <h4>관광지 투어</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, consectetur.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 // object.js
 // 객체.
-let ary = [];
+let ary = new Array(); // [];
 let obj = {
   name: '홍길동',
   age: 20,
