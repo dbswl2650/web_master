@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>미디어</title>
+    <style>
+      img{
+        width: 100px;
+        height: 100px;
+      }
+      .float_left{
+        width: 500px;
+        float: left;
+        padding: 10px;
+        padding: 10px;background-color: #f00;
+      }
+      .float{
+        float: right;
+      }
+      .float_left p{
+        /* padding: 20px; */
+        background-color: #ccc;
+      }
+      .float_right{
+        float: right;
+        width: 500px;
+      }
+      figure{
+        clear: both;
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>미디어 삽입</h1>
+    <h3>이미지 삽입</h3>
+    <div class="float_left">
+      <img src="img/레드향.jpg" art="img\레드향.jpg" title="맛있는 레드향 먹방!" class="float"> 
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Quam rem assumenda quod eum cupiditate? Ut officia ducimus ipsum. 
+        Ex laboriosam adipisci rerum consectetur nihil exercitationem ad quidem tempore dicta aspernatur!</p>
+    </div>
+    <hr>
+    <div class="float_right">
+    <img src="img/레드향.jpg" alt="레드향">
+      <p>Lorem ipsum dolor, 
+        sit amet consectetur adipisicing elit. 
+        Enim quam eius, 
+        necessitatibus sed ipsum dolorem eum impedit? 
+        Error eius dignissimos consequatur itaque illum animi reiciendis! Eum eos iste rerum eaque.</p>
+    </div>
+    <figure>
+      <img src="img/레드향.jpg" alt="레드향">
+      <img src="img/레드향.jpg" alt="레드향">
+      <img src="img/레드향.jpg" alt="레드향">
+      <figcaption>잠을 깨우는 귀여운 레드향 먹방 이미지</figcaption>
+    </figure>
+    <h3>오디오 삽입</h3>
+    <audio src="media/미소속에비친그대.mp3" controls></audio>
+    <video src="media/사랑한다사랑해.mp4" controls width="500" height="400"></video>
+    <h3>외부파일 삽입</h3>
+    <embed src="media/2-1.과제(html작성).pdf" width="500" height="600">
+    <object data="media/2-1.과제(html작성).pdf" width="500" height="600"></object>
+    <object data="index.html" width="300" height="600"></object>
+    <iframe src="media/2-1.과제(html작성).pdf" width="500" height="600"></iframe>
+    <h4>유튜브 영상 삽입</h4>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0n0UEw8Bp-Y?si=ews1syxGeBpA3D7h" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2단레이아웃</title>
+  <style>
+    #container{
+      width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid #aaa;
+    }
+    header{
+      height: 100px;
+      padding: 10px;
+      background-color: beige;
+    }
+    section{
+      width: 700px;
+      height: 300px;
+      border: 1px solid #ccc;
+      background-color: aquamarine;
+      float: left;
+    }
+    aside{
+      width: 280px;
+      height: 300px;
+      border: 1px solid #ccc;
+      background-color: pink;
+      float: right;
+    }
+    footer{
+      background-color: beige;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+
+    <header>
+      <h3>헤더영역</h3>
+    </header>
+
+    <section>
+      <h3>본문영역</h3>
+      <p>내용편집</p>
+    </section>
+
+    <aside>
+      <h3>어사이드 영역</h3>
+      <p>광고</p>
+    </aside>
+
+    <footer>
+      <h3>푸터영역</h3>
+      <p>회사정보</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

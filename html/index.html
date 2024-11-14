@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang "ko">
+ <head>
+  <meta charset="utf-8">
+  <title>첫페이지</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+  <style>
+    h1{
+      box-sizing: border-box;
+      width: 300px;
+      height: 300px;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+      line-height: 150px;
+      text-shadow: 2px 2px 2px #999;
+      /* background-color: #0f8; */
+      border: 2px solid #f000;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      box-shadow: 5px 5px 20px 2px #000 ;
+    }
+    table{
+      border: 2px solid gray;
+      border-collapse: collapse;
+    }
+    th, td{
+      border: 1px solid gray;
+      padding: 10px;
+    }
+    thead{
+      background-color: beige;
+    }
+    tfoot{
+      background-color: aqua;
+    }
+    tbody{
+      text-align: center;
+    }
+    .para{
+      width: 70%;
+      border-collapse: separate;
+      border: none;
+      border-spacing: 10px;
+      empty-cells: hide;
+    }
+    ul{
+      width: 300px;
+      padding: 10px;
+      background-color: rgb(115, 255, 0);
+    }
+    ul:hover li{
+      display: block;
+    }
+    ul li{
+      border: 1px solid #f00;
+      margin: 20px;
+      padding: 20px;
+      display: none;
+    }
+  </style>
+ </head>
+ <body>
+  <ul id="top">
+    <li><a href="#list">목록만들기</a></li>
+    <li><a href="#add">주소록</a></li>
+  </ul>
+  <h1>웹개발</h1>
+  <p><b>html</b> : 웹문서의 내용을 구성 담당</p>
+  <p><b><i>css</i></b> : 웹문서의 디자인을 담당</p>
+  <p><strong>javascript</strong> : 사용자의 동작에 반응</p>
+  <blockquote><q><i><mark><strong>Lorem</strong></mark><span style="color:red">lorem ipsum</span> dolor, <br> sit <ins>amet</ins> <del>consectetur</del> adipisicing elit. Dicta, amet?
+  </i></q></blockquote>
+  <hr>
+  <pre>
+  Lorem ipsum dolor,
+    Lorem ipsum
+     dolor,
+    Lorem ipsum dolor,
+    Lorem ipsum                                           dolor,
+    Lorem ipsum dolor,
+  </pre>
+  <div style="color:blue">
+    <h3><ruby>學習<rt>학습</rt></ruby></h3>
+    <h3>1박스<small>(10kg)</small></h3>
+    <h3>y=x<sup>2</sup> + a</h3>
+    <h3>H<sub>2</sub>0</h3>
+    <abbr title="Artificial Intelligence">AI</abbr>
+  </div>
+  <hr>
+  <h3 id="list">목록만들기</h3>
+  <h4>순서 있는 목록 만들기 : 코끼리 냉장고 넣기</h4>
+  <ol type="I" start="4">
+    <li>냉장고 문을 연다</li>
+    <li>코끼리를 넣는다</li>
+    <li>냉장고 문을 닫는다</li>
+  </ol>
+  <h4>순서 없는 목록 만들기 : 여행 준비물</h4>
+  <ul>
+    <li>세면도구</li>
+    <li>여권</li>
+    <li>옷</li>
+  </ul>
+  <h4>설명 목록 : 상품구성 설명</h4>
+  <dl>
+    <dt>선물용 3kg</dt>
+    <dd>소과 : 13-16과</dd>
+    <dd>중과 : 10-12과</dd>
+  
+    <dt>선물용 5kg</dt>
+    <dd>중과 15-19과</dd>
+  </dl>
+  <p><a href="#top">처음으로</a></p>
+  <h3 id="add">표만들기</h3>
+  <table>
+    <caption>주소록</caption>
+    <colgroup>
+      <col span="2" style="background-color: pink;">
+      <col>
+      <col>
+    </colgroup>
+    <tr>
+      <th>순번</th>
+      <th>이름</th>
+      <th>연락처</th>
+      <th>주소</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>홍길동</td>
+      <td>111-111-111</td>
+      <td>대구 중구 남산동</td>
+      <tr>
+        <td>2</td>
+        <td>강길동</td>
+        <td>222-222-222</td>
+        <td>대구 동구 본리동</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>이길동</td>
+        <td>333-333-333</td>
+        <td>대구 서구 내당동</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>박길동</td>
+        <td>444-444-444</td>
+        <td>대구 달서구 이곡동</td>
+      </tr>
+    </tr>
+  </table>
+  <p><a href="#top">처음으로</a></p>
+  <table>
+    <h3>상품 구성</h3>
+    <table>
+      <caption>선물용과 가정용 상품 구성</caption>
+      <colgroup>
+        <col style="background-color: bisque;">
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">선물용</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>35,000원</td>
+        </tr>
+        <tr>
+          <td>5kg</td>
+          <td>18~26과</td>
+          <td>52,000원</td>
+        </tr>
+        <tr>
+          <td rowspan="2">가정용</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>30,000원</td>
+        </tr>
+        <tr>
+          <td>5kg</td>
+          <td>18~26과</td>
+          <td>47,000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">사정에 따라 가격이 변동될 수 있습니다 </td>
+        </tr>
+      </tfoot>
+    </table>
+  </table>
+  <table class="para">
+    <caption>파라다이스 객실</caption>
+    <thead style="background-color: pink;">
+      <tr>
+        <th>방이름</th>
+        <th>대상</th>
+        <th>크기</th>
+        <th>가격</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>핑크방</td>
+        <td>여성</td>
+        <td rowspan="3">4인실</td>
+        <td rowspan="4">1인20,000원</td>
+      </tr>
+      <tr>
+        <td rowspan="2">보라방</td>
+        <td>동성</td>
+      </tr>
+      <tr>
+        <td>가족1팀</td>
+      </tr>
+      <tr>
+        <td>그린방</td>
+        <td></td>
+        <td>2인실</td>
+      </tr>
+    </tbody>
+    <tfoot style="background-color: grey;">
+      <td colspan="4">바깥체 전체를 렌트합니다</td>
+    </tfoot>
+  </table>
+  <h3>하이퍼링크 삽입</h3>
+  <a href="https://www.naver.com" title="네이버로 이동">네이버</a>
+  <a href="img/레드향.jpg" download>이미지 다운로드</a>
+  <a href="미디어.html" target="_blank">미디어 보기</a>
+ </body>
+</html>
