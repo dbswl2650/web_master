@@ -40,14 +40,40 @@
         <div id="lotto"><span>23</span><span>33</span></div>
     </div>
     <script>
-        let lottoNumbers = []
-        document.querySelector('#btn').addEventListener('click', function() {
+        function randomNumber() {
+            document.querySelector('#lotto').innerHTML = ""
+            let lottoNumbers = []
+            for (let i = 0; i < 6;) {
+                let mr = parseInt(Math.random()* 45) + 1;
+                if(dupValueCheck(lottoNumbers, mr) == -1) {
+                    lottoNumbers[i] = mr;
+                    i++; // 추가할 경우에만 i를
+                }
+            };
+            eventNumber(lottoNumbers)
+        };
+        function eventNumber(a) {
             for (let i = 0; i < 6; i++) {
-                let mr = Math.random() * 45 + 1;
-                lottoNumbers.push(mr)
-                console.log(mr)
+                document.querySelector('#lotto').innerHTML += '<span>' + a[i] + '</span>'
             }
-        })
+            }
+        document.querySelector('#btn').addEventListener('click',randomNumber);
+
+        function dupValueCheck(ary = [], checkNum = 10) {
+            // 배열, 값 체크가능.
+            // 배열에 찾는값이 있으면 인덱스값을 반환, -1 반환.
+            for(let i =0; i<ary.length; i++) {
+                if(ary[i] == checkNum) { // 찾는 값이 있다는 의미.
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        let tempAry = [20, 45, 30, 17]
+        let num = 17;
+        console.log(dupValueCheck(tempAry, num));
+
             //임의의 숫자 6개 생성: 1 ~ 45 범위.
     </script>
 </body>
