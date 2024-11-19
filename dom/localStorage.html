@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage.html</title>
+</head>
+<body>
+  <h3>localStorage 페이지</h3>
+  <p>localStorage 객체에 있는 친구정보</p>
+  <button>친구정보 불러오기.</button>
+  <div id="container">
+    <div class = "row">
+
+      <!--시작-->
+      <div class="col-sm-3">
+        <div class="card" style="width: 10rem;">
+          <img src="images/권태석.jpg" style="width: 150px; height: 100px;" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    console.log(window);
+
+
+    document.querySelector('button').addEventListener('click', (e)=> {
+      let json = localStorage.getItem('friendList')
+      let ary = JSON.parse(json);
+
+      
+      let template = document.querySelector('div.row>div.col-cm-3').cloneNode(true)
+      template.querySelector('img').setAttribute('src', 'images/김신형.jpg');
+      document.querySelector('div.row').appendchild(template);
+       console.log(template);
+    })
+
+
+    let obj = {
+      name: "Park",
+      age: 22
+    }
+
+    let ary = [
+      {studNo: '24-001', studName: '홍길동', score: 80},
+      {studNo: '24-002', studName: '최민식', score: 85},
+      {studNo: '24-003', studName: '이문식', score: 90}
+    ]
+
+
+    let json = JSON.stringify(obj); // object -> 문자열 변형.
+    console.log(json); // json문자열.
+    obj = JSON.parse(json); // 문자열 -> object 변형.
+    console.log(obj);
+
+    localStorage.setItem('obj', JSON.stringify(obj));
+
+    localStorage.setItem('name', 'Hongkildong');
+    localStorage.setItem('age', 20);
+
+    console.log(JSON.parse(localStorage.getItem('obj')));
+
+  </script>
+</body>
+</html>

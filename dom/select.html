@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>select.html</title>
+  <style>
+    #container {
+      width: 500px;
+      height: 300px;
+      background-color: yellow;
+    }
+
+    #container span {
+      display: inline-block;
+      font-size: large;
+      width: 110px;
+      margin: 2px;
+      padding: 1px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  입력: <input type="text" id="userValue">
+  <button id="deleteWord">삭제</button>
+
+  <div id="container"></div>
+
+  <script>
+    let str = 
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias vitae commodi sit,deleniti consectetur quia eum! Quaerat, molestias facilis ipsum tenetur autem incidunt,enim aspernatur esse quisquam suscipit quae ipsa.'
+    let strAry = str.split(' ');
+    strAry.forEach(word => {
+      // console.log(word);
+      let span = document.createElement('span');
+      span.innerText = word;
+      document.querySelector('#container').appendChild(span);
+    // document.querySelector('#container').innerHTML +=`<span>${word}</span>`
+    })//
+
+    document.querySelector('#deleteWord').addEventListener('click', (e) => {
+      console.log(e);
+      document.querySelector('#userValue').value
+      document.querySelectorAll('#container span').forEach(element => {
+        if(element.innerText == document.querySelector('#userValue').value) {
+          element.remove();
+        }
+      }) 
+      // 입력값 초기화.
+      document.querySelector('#userValue').value = '';
+    })
+    // 1. 클릭이벤트 등록.
+    // 2. span요소전체를 대상으로 반복문.
+    // 3. span의 innerText와 사용자의 입력값을 배교해서 같으면 remove()
+
+    // let no = 100;
+    // let job = setInterval(function(){
+    //   if(no <=0){
+    //     clearInterval(job)
+    //     alert()
+    //   }
+    //   console.log(no--)
+    // },3000)
+  </script>
+</body>
+</html> 
