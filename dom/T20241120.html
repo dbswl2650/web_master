@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T20241120.html</title>
+  <style>
+    #container{
+      width: 1000px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+    }
+    #showcd table {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #show table {
+      width: 95%;
+    }
+    #show th {
+      width: 300px;
+      background-color: yellow;
+    }
+    #show input {
+      width: 450px;
+      padding: 5px;
+    }
+    #show td {
+      margin-right: 10px;
+    }
+    #showcd thead {
+      background-color: black;
+      color: white;
+    }
+    button{
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="show">
+      <table class="table">
+        <tr>
+          <th>도서코드</th>
+          <td><input type="text" name="bookCode" class="form-control"></td>
+        </tr>
+        <tr>
+          <th>도서명</th>
+          <td><input type="text" name="bookName" class="form-control"></td>
+          <td><button class="btn-primary">저장</button></td>
+        </tr>
+        <tr>
+          <th>저자</th>
+          <td><input type="text" name="author" class="form-control"></td>
+          <td><button class="btn-danger">선택삭제</button></td>
+        </tr>
+        <tr>
+          <th>출판사</th>
+          <td><input type="text" name="press" class="form-control"></td>
+        </tr>
+        <tr>
+          <th>금액</th>
+          <td><input type="text" name="price" class="form-control"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="showcd">
+      <table class="table">
+        <thead>
+          <th><input type="checkbox"></th>
+          <th>도서코드</th>
+          <th>도서명</th>
+          <th>저자</th>
+          <th>출판사</th>
+          <th>가격</th>
+          <th>삭제</th>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/bookList.js"></script>
+  <script src="js/jiwonList.js"></script>
+</body>
+
+</html>

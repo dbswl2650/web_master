@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <select multiple style="height:100px">
+    <option>Row1</option>
+    <option>Row2</option>
+    <option>Row3</option>
+    <option>Row4</option>
+    <option>Row5</option>
+  </select>
+  <button id="moveRight">+</button>
+  <button id="moveLeft">-</button>
+  <select multiple style="height:100px">
+    <option>Row6</option>
+    <option>Row7</option>
+    <option>Row8</option>
+    <option>Row9</option>
+    <option>Row10</option>
+  </select>
+  <script>
+    //
+    // document.querySelectorAll('select option')[document.querySelector('select').selectedIndex]
+    // document.querySelector('#moveRight').addEventListener('click', (e) => {
+    //   document.querySelector('select:nth-of-type(2)').appendChild(document.querySelectorAll('select:nth-of-type(1) option')
+    //   [document.querySelector('select:nth-of-type(1)').selectedIndex])
+    // });
+    // document.querySelector('#moveLeft').addEventListener('click', (e) => {
+    //   document.querySelector('select:nth-of-type(1)').appendChild(document.querySelectorAll('select:nth-of-type(2) option')
+    //   [document.querySelector('select:nth-of-type(2)').selectedIndex])
+    // });
+
+    document.querySelector('select:nth-of-type(1)').addEventListener('click',(e) =>{
+      console.log(document.querySelector('select').selectedIndex /*인덱스 순번*/)
+    })
+    document.querySelector('#moveRight').addEventListener('click', (e) => {
+      let target = document.querySelector('select:nth-of-type(2)')
+      while (true) {
+        let idx = document.querySelector('select').selectedIndex
+        console.log(idx)
+        if (idx == -1){
+          break;
+        }
+        target.appendChild(document.querySelectorAll('select option')[idx])
+      }
+    });
+    
+
+    //
+  </script>
+</body>
+
+</html>

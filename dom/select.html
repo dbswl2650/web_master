@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
   <style>
     #container {
       width: 500px;
-      height: 300px;
+      height: 500px;
       background-color: yellow;
     }
 
@@ -21,47 +22,49 @@
     }
   </style>
 </head>
+
 <body>
-  입력: <input type="text" id="userValue">
+  입력 : <input type="text" id="userValue">
   <button id="deleteWord">삭제</button>
 
-  <div id="container"></div>
+  <div id="container">
 
+  </div>
   <script>
-    let str = 
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias vitae commodi sit,deleniti consectetur quia eum! Quaerat, molestias facilis ipsum tenetur autem incidunt,enim aspernatur esse quisquam suscipit quae ipsa.'
+    let str = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas corrupti similique harum tempora et commodi, tempore enim esse, voluptatum nam qui consectetur in, sapiente quasi fuga assumenda a rerum rem.'
     let strAry = str.split(' ');
     strAry.forEach(word => {
-      // console.log(word);
-      let span = document.createElement('span');
+      // console.log(word)
+      // document.write(`<span>${strAry}</span>`) 1111
+      // document.querySelector('#container').innerHTML +=`<span> ${word} </span>` 222
+      let span = document.createElement('span')
       span.innerText = word;
-      document.querySelector('#container').appendChild(span);
-    // document.querySelector('#container').innerHTML +=`<span>${word}</span>`
-    })//
-
-    document.querySelector('#deleteWord').addEventListener('click', (e) => {
-      console.log(e);
-      document.querySelector('#userValue').value
-      document.querySelectorAll('#container span').forEach(element => {
-        if(element.innerText == document.querySelector('#userValue').value) {
-          element.remove();
-        }
-      }) 
-      // 입력값 초기화.
-      document.querySelector('#userValue').value = '';
+      document.querySelector(`#container`).appendChild(span)
     })
-    // 1. 클릭이벤트 등록.
-    // 2. span요소전체를 대상으로 반복문.
-    // 3. span의 innerText와 사용자의 입력값을 배교해서 같으면 remove()
-
+    document.querySelector('#deleteWord').addEventListener('click', (e) => {
+      let inV = document.querySelector('#userValue').value
+      document.querySelectorAll('#container span').forEach(element => {
+        if(inV == element.innerHTML){
+          element.remove()
+        }
+      })
+    })
+    
     // let no = 100;
     // let job = setInterval(function(){
     //   if(no <=0){
     //     clearInterval(job)
-    //     alert()
+    //     alert('싫패')
+    //   }
+    //   if(document.querySelectorAll('#container span').length == 0){
+    //     clearInterval(job)
+    //     alert('성공')
     //   }
     //   console.log(no--)
-    // },3000)
+    // },1000)
+
+
   </script>
 </body>
-</html> 
+
+</html>

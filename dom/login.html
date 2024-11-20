@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <table border="2">
+    <tr>
+      <th>아이디</th>
+      <td><input type="text" name="uid" id="uid"></td>
+    </tr>
+    <tr>
+      <th>비밀번호</th>
+      <td><input type="password" name="upw" id="upw"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button>로그인</button>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    let members = [{
+        id: 'user01',
+        pw: '1111',
+        name: '사용자1'
+      },
+      {
+        id: 'user02',
+        pw: '2222',
+        name: '사용자2'
+      },
+      {
+        id: 'user03',
+        pw: '3333',
+        name: '사용자3'
+      }
+    ]
+
+    document.querySelector('button').addEventListener('click', (e) => {
+      let inid = document.querySelector('#uid').value
+      let inpw = document.querySelector('#upw').value
+
+      // 기본적으로 하나하나 상상해서 코드를 생성한거(우리가 한거)
+
+      // let a = ''
+      // for(i = 0; i < members.length; i++) {
+      //   if(members[i].id == inid && members[i].pw == inpw) {
+      //     a='로그인 성공입니다.'
+      //     break;
+      //   }else if(members[i].id != inid && members[i].pw == inpw){
+      //     a='아이디가 틀렸습니다'
+      //     break;
+      //   }else if(members[i].id == inid && members[i].pw != inpw){
+      //     a='비밀번호가 틀렸습니다'
+      //     break;
+      //   }
+      //   else {
+      //     a='로그인 실패입니다.'
+      //   }
+      // } alert(a)
+    // })
+
+
+      // forEach로 로그인하기
+
+    //   let isOk = false;
+    //     members.forEach(member => {
+    //       if(member.id == inid && member.pw == inpw) {
+    //         isOk = true;
+    //         return;
+    //        }
+    //      })
+    //      if (isOk == false) {
+    //       alert('로그인 실패')
+    //      }else {
+    //       alert('로그인 성공')
+    //      }
+    // })
+
+
+      // filter로 로그인하기
+
+    //   let result = members.filter(member => member.id == inid && member.pw == inpw);
+    //   if (result.length) {
+    //     alert('로그인 성공');
+    //   } else {
+    //     alert('로그인 실패');
+    //   }
+    // })
+  </script>
+</body>
+
+</html>
