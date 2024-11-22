@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    #container{
+      text-align: center;
+    }
+    #container h2{
+      color: white;
+      float: left;
+      font-size: 25px;
+    }
+    video{
+      width: 1500px;
+      height: 1000px;
+    }
+    nav{
+      background-color: #000;
+      overflow: hidden;
+      padding: 20px;
+    }
+    nav ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    nav li a{
+        color: #fff;
+        float: left;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+    nav a:hover{
+      background-color: rgb(223, 223, 217);
+      color: black;
+    }
+    nav li:last-child{
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <head>
+      <h2>AnnyJoa</h2>
+      <nav>
+        <ul>
+          <li><a href="product.html">애니목록</a></li>
+          <li><a href="cart.html">장바구니</a></li>
+          <li><a href="login.html">로그인/가입</a></li>
+        </ul>
+      </nav>
+    </head>
+    <article>
+        <video src="images/gear5.mp4" controls autoplay loop muted></video>
+    </article>
+  </div>
+
+  <script src="js/login.js"></script>
+  <script>
+    localStorage.setItem('memberData', JSON.stringify(memberData));
+    localStorage.setItem('productData', JSON.stringify(productData));
+    localStorage.setItem('cartData', JSON.stringify(cartData));
+  </script>
+</body>
+</html>

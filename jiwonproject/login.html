@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+
+  <style>
+    #container{
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      background-image: url(images/캡처.PNG);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    head h2{
+      margin-top: 1;
+    }
+    .table{
+      width: 20%;
+      height: 40%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+      background-color: black;
+      text-align: center;
+    }
+    .table th{
+      color: white;
+      font-weight: bold;
+    }
+    nav ul{
+      padding: 0;
+      list-style: none;
+      font-weight: bold;
+    }
+    nav li a{
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+    nav a:hover{
+      background-color: rgb(223, 223, 217);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <head>
+      <h2>AnnyJoa</h2>
+      <nav>
+        <ul>
+          <li><a href="index.html">메인페이지</a></li>
+        </ul>
+      </nav>
+    </head>
+    <article>
+      <table class="table">
+        <tr>
+          <th>아이디</th>
+          <td><input type="text" name="uid" id="uid" class="from-control"></td>
+        </tr>
+        <tr>
+          <th>비밀번호</th>
+          <td><input type="password" name="upw" id="upw" class="from-control"></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <button class="btn btn-primary">로그인</button>
+          </td>
+        </tr>
+      </table>
+    </article>
+  </div>
+  <script>
+    const memberData = JSON.parse(localStorage.getItem('memberData'));
+    document.querySelector('button.btn-primary').addEventListener('click', e => {
+      let id = document.querySelector('#uid').value;
+      let pw = document.querySelector('#upw').value;
+
+      let loginInfo = memberData.filter(member => member.id == id && member.pw == pw);
+      if(loginInfo.length) {
+        localStorage.setItem('logId', id);
+        localStorage.setItem('logName',loginInfo[0].name);
+        location.href = 'index.html';
+      } else {
+        alert('입력정보를 확인하세요.');
+      }
+    })
+  </script>
+</body>
+</html>
