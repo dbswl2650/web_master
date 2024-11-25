@@ -30,7 +30,7 @@
     const memberData = JSON.parse(localStorage.getItem('memberData'));
     // 로그인 이벤트.
     document.querySelector('button.btn-primary').addEventListener('click', e => {
-      // 로그인 성고하면 welcome페이지로 이동. 입력정보 확인 후 재로그인.
+      // 로그인 성공하면 welcome페이지로 이동. 입력정보 확인 후 재로그인.
       let id = document.querySelector('#uid').value;
       let pw = document.querySelector('#upw').value;
 

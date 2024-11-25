@@ -88,6 +88,21 @@ const cartData = [{
   id: 'user02',
   pcode: '#1',
   qty: 3
+},
+{
+  id: 'dbswl2650',
+  pcode: '#7',
+  qty: 1
+},
+{
+  id: 'dbswl2650',
+  pcode: '#5',
+  qty: 1
+},
+{
+  id: 'dbswl2650',
+  pcode: '#3',
+  qty: 1
 }
 ]
 
