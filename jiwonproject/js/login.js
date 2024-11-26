@@ -23,44 +23,56 @@ const memberData = [{
 const productData = [{
   pcode: '#1',
   pname: '귀멸의 칼날',
-  price: 12000,
-  image: 'Demon Slayer.jpg'
+  price: 7,
+  image: '귀멸의 칼날.gif'
 },
 {
   pcode: '#2',
   pname: '진격의 거인',
-  price: 24000,
-  image: 'Attack on titan.jpg'
+  price: 7,
+  image: '진격의 거인.gif'
 },
 {
   pcode: '#3',
   pname: '강철의 연금술사 BROTHERHOOD',
-  price: 10000,
-  image: 'FullmetalAlchemist.jpg'
+  price: 3,
+  image: '강철의 연금술사.gif'
 },
 {
   pcode: '#4',
   pname: '최애의 아이',
-  price: 30000,
-  image: 'OSHI NO KO.jpg'
+  price: 8,
+  image: '최애의아이.gif'
 },
 {
   pcode: '#5',
   pname: '원피스',
-  price: 15000,
-  image: 'onepice.jpg'
+  price: 5,
+  image: '원피스.gif'
 },
 {
   pcode: '#6',
   pname: '포켓몬',
-  price: 12500,
-  image: 'poketmon.jpg'
+  price: 2,
+  image: '피카츄.gif'
 },
 {
   pcode: '#7',
   pname: '디지몬',
-  price: 13500,
-  image: 'Digimon.jpg'
+  price: 2,
+  image: '디지몬.gif'
+},
+{
+  pcode: '#8',
+  pname: '원펀맨',
+  price: 4,
+  image: '원펀맨.gif'
+},
+{
+  pcode: '#9',
+  pname: '나루토',
+  price: 5,
+  image: '나루토.gif'
 }
 ]
 

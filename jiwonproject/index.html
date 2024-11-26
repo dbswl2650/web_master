@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet" />
+  <title>Anijoa</title>
   <style>
     body {
       background-color: black;
     }
-    #container{
+
+    #container {
       text-align: center;
     }
-    #container h1{
+
+    #container h1 {
       color: white;
       float: left;
       font-size: 30px;
       margin-top: 10px;
     }
-    video{
+
+    video {
       width: 1500px;
       height: 1000px;
     }
-    nav{
-      background-color: #000;
-      overflow: hidden;
-      padding: 20px;
+
+    h1 a{
+      text-decoration: none;
+      color: white;
     }
-    nav ul{
-      padding: 0;
-      margin: 0;
-      list-style: none;
+
+    .header {
+      border-bottom: 1px solid #d0d0d0;
+      min-height: 60px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
     }
-    nav li a{
-        transition-property: all;
-        transition-duration: 1s;
-        color: #fff;
-        float: left;
-        text-decoration: none;
-        padding: 10px;
-        display: block;
+
+    .header-content {
+      display: flex;
+      width: 100%;
+      max-width: 2000px;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      align-items: center;
+      justify-content: space-between;
     }
-    nav a:hover{
-      background-color: rgb(223, 223, 217);
-      color: black;
+
+    .header-navigation {
+      display: flex;
+      align-items: center;
     }
-    nav li:last-child{
-      float: right;
+
+    .header-navigation a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
     }
   </style>
 </head>
+
 <body>
   <div id="container">
-    <head>
-      <h1>AniJoa</h1>
-      <nav>
-        <ul>
-          <li><a href="product.html">애니목록</a></li>
-          <li><a href="cart.html">장바구니</a></li>
-          <li><a href="login.html">로그인/가입</a></li>
-        </ul>
-      </nav>
-    </head>
+    <header class="header">
+      <div class="header-content">
+        <div class="header-logo">
+          <h1 class="logo"><a href="index.html">Anijoa</a></h1>
+        </div>
+        <nav class="header-navigation">
+          <a href="cart.html" class="link-button">장바구니<i class="material-icons-outlined">shopping_cart</i></a>
+          <a href="product.html">애니목록</a>
+          <a href="login.html">로그인</a>
+        </nav>
+      </div>
+    </header>
     <article>
-        <video src="images/gear5.mp4" controls autoplay loop muted></video>
+      <video src="images/gear5.mp4" controls autoplay loop muted></video>
     </article>
   </div>
 
@@ -73,4 +91,5 @@
     localStorage.setItem('cartData', JSON.stringify(cartData));
   </script>
 </body>
+
 </html>

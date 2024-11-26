@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CodePen - Illustration online store </title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style2.css">
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<header class="header">
+		<div class="header-content">
+			<div class="header-logo">
+				<h1 class="logo">Anijoa</h1>
+			</div>
+			<nav class="header-navigation">
+				<a href="login.html">로그인</a>
+				<a href="cart.html" class="link-button">장바구니<i class="material-icons-outlined">shopping_cart</i></a>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<div class="responsive-container">
+			<div class="grid">
+				<div class="grid-column">
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/최애의아이.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">최애의 아이</h2>
+								<p class="product-price">$ 10</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/귀멸의 칼날.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">귀멸의 칼날</h2>
+								<p class="product-price">$ 9</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/진격의 거인.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">진격의 거인</h2>
+								<p class="product-price">$ 9</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+				</div>
+				<div class="grid-column">
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/디지몬.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">디지몬</h2>
+								<p class="product-price">$ 9</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/피카츄.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">포켓몬</h2>
+								<p class="product-price">$ 12</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/강철의 연금술사.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">강철의 연금술사</h2>
+								<p class="product-price">$ 5</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+				</div>
+				<div class="grid-column">
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/원피스.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">원피스</h2>
+								<p class="product-price">$ 15</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/나루토.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">나루토</h2>
+								<p class="product-price">$ 5</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+					<a class="product" href="#">
+						<div class="product-image">
+							<img src="img/원펀맨.gif" />
+						</div>
+						<div class="product-content">
+							<div class="product-info">
+								<h2 class="product-title">원펀맨</h2>
+								<p class="product-price">$ 5</p>
+							</div>
+							<button class="btn-primary"><i class="material-icons-outlined">favorite_border</i></button>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="credits">
+			<div class="responsive-container">
+				<h3>Illustrations by Freepik</h3>
+				<a href='https://www.freepik.com/' target="_blank">Check out their amazing work - www.freepik.com</a>
+			</div>
+		</div>
+	</main>
+	<!-- partial -->
+	<script>
+		let productData = JSON.parse(localStorage.getItem('produtData));
+		let cartData = JSON.parse(localStorage.getItem('cartData'));
+
+		productData.forEach(product => {
+			let template =
+				`<div class="col" data-pcode="${product.pcode}">
+					<div class="card" style="width: 20rem;">
+							<img src="images/${product.image}" height="300px" class="card-img-top" alt="...">
+							<div class="card-body">
+									<h5 class="card-title">${product.pcode}</h5>
+									<p class="card-text">${product.pname}<br>${product.price}</br></p>
+									<a href="" class="btn btn-primary">장바구니 담기</a>
+							</div>
+					</div>
+			</div>`;
+			document.querySelector('div.row').insertAdjacentHTML("beforeend", template);
+		})
+
+
+		document.querySelectorAll('button.btn-primary').forEach(item => {
+			item.addEventListener('click', e => {
+				
+				e.preventDefault();
+				
+				let id = localStorage.getItem('logId');
+				let pcode = e.target.closest('div.col').getAttribute('data-pcode');
+				
+				console.log(cartData);
+				
+				document.location = 'cart.html';
+
+				let result = cartData.filter(cart => cart.id == id && cart.pcode == pcode);
+				if (result.length) {
+					console.log("장바구니에 이미 있습니다.");
+
+					cartData.forEach(cart => {
+						if (cart.id == id && cart.pcode == pcode) {
+							cart.qty++;
+						}
+					})
+				} else {
+					console.log("장바구니에 없습니다.");
+
+					cartData.push({
+						id: id,
+						pcode: pcode,
+						qty: 1
+					});
+				}
+
+				console.log(cartData);
+
+				localStorage.setItem('cartData', JSON.stringify(cartData));
+
+			})
+		})
+
+	</script>
+</body>
+
+</html>
