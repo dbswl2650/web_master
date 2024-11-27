@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anicart</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <style>
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    p,
+    span {
+      margin: 0;
+    }
+
+    a {
+      color: black;
+    }
+
+    img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 50%;
+    }
+
+    .header {
+      border-bottom: 1px solid #d0d0d0;
+      min-height: 60px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-content {
+      display: flex;
+      width: 100%;
+      max-width: 2000px;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-navigation {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-navigation a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    h1 a {
+      text-decoration: none;
+      font-size: 2rem;
+    }
+
+    .cart {
+      width: 80%;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .cart ul {
+      background-color: whitesmoke;
+      padding: 30px;
+      margin-bottom: 50px;
+      border: whitesmoke solid 1px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .cart ul :first-child {
+      color: red;
+    }
+
+    table {
+      border-top: solid 1.5px black;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    thead {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    tbody {
+      font-size: 12px;
+    }
+
+    td {
+      padding: 15px 0px;
+      border-bottom: 1px solid lightgrey;
+    }
+
+    .cart__list__detail :nth-child(3) {
+      vertical-align: top;
+    }
+
+    .cart__list__detail :nth-child(3) a {
+      font-size: 12px;
+    }
+
+    .cart__list__detail :nth-child(3) p {
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    .cart__list__smartstore {
+      font-size: 12px;
+      color: gray;
+    }
+
+    .cart__list__option {
+      vertical-align: top;
+      padding: 20px;
+    }
+
+    .cart__list__option input {
+      border: 1px #dee2e6;
+      width: 1.5em;
+      height: 1.5em;
+      margin-top: .25em;
+      vertical-align: top;
+      background-color: #fff;
+    }
+
+    .input-group {
+      margin-top: 50px;
+    }
+
+    .input-group-btn button {
+      background-color: #fff;
+    }
+
+    .rounded-circle {
+      border-radius: 50%;
+    }
+
+    .input-group .btn {
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-light {
+      background-color: #f4f6f8;
+    }
+
+    .border {
+      border: 1px solid #dee2e6
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #747d88;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .btn-sm,
+    .btn-group-sm>.btn {
+      padding: .25rem .5rem;
+      font-size: 0.875rem;
+    }
+
+    .cart__list__option p {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .cart__list__option p::after {
+      content: "";
+      width: 90%;
+      height: 1px;
+      background-color: lightgrey;
+      left: 0px;
+      top: 25px;
+      position: absolute;
+    }
+
+    .cart__list__detail :nth-child(4),
+    .cart__list__detail :nth-child(5),
+    .cart__list__detail :nth-child(6) {
+      border-left: 2px solid whitesmoke;
+    }
+
+    .cart__list__detail :nth-child(5),
+    .cart__list__detail :nth-child(6) {
+      text-align: center;
+    }
+
+    .cart__list__detail :nth-child(5) button {
+      background-color: skyblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 8px;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    .cart__mainbtns {
+      width: 420px;
+      height: 200px;
+      padding-top: 40px;
+      display: block;
+      margin: auto;
+    }
+
+    .cart__bigorderbtn {
+      width: 200px;
+      height: 50px;
+      font-size: 16px;
+      margin: auto;
+      border-radius: 5px;
+    }
+
+    .cart__bigorderbtn.right {
+      background-color: skyblue;
+      color: black;
+      border: none;
+      margin-left: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-logo">
+        <h1 class="logo"><a href="Anijoaindex.html">Anijoa</a></h1>
+      </div>
+      <nav class="header-navigation">
+        <a href="Aniproduct.html">애니목록</a>
+        <a href="Anijoalogin.html">로그인</a>
+      </nav>
+  </header>
+  <section class="cart">
+    <div class="cart__information">
+      <ul>
+        <li>장바구니 상품은 최대 30일간 저장됩니다.</li>
+        <li>가격, 애니정보 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+        <li>애니상품은 판매자 설정 시점에 따라 시청 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
+      </ul>
+    </div>
+    <table class="cart__list">
+      <form>
+        <thead>
+          <tr>
+            <td>애니이미지</td>
+            <td>애니정보</td>
+            <td>애니수량</td>
+            <td>상품금액</td>
+            <td>수수료</td>
+            <td>삭제</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cart__list__detail">
+          </tr>
+        </tbody>
+      </form>
+    </table>
+    <div class="cart__mainbtns">
+      <button class="cart__bigorderbtn right">결제</button>
+    </div>
+  </section>
+  <script>
+    let cartData = JSON.parse(localStorage.getItem('cartData'));
+
+    const logId = localStorage.getItem('logId');
+    let productData = JSON.parse(localStorage.getItem('productData'));
+    const myCart = cartData.filter(cart => cart.id == logId);
+
+    myCart.forEach(cart => {
+      let product = productData.filter(e => cart.pcode == e.pcode)
+      console.log(product);
+      let template =
+        `<tr data-pcode="${cart.pcode}">
+                    <td><img src="img/${product[0].image}" alt="magic keyboard"></td>
+                    <td><span class="cart__list__smartstore">${product[0].pcode}</span>
+                        <p>${product[0].pname}</p>
+                        <sapn class="price">${product[0].price}</sapn><spa><i class="material-icons-outlined">cookie</i></span>
+                    </td>
+                    <td class="cart__list__option">
+                      <div class="input-group quantity mt-4">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </span>
+                        <input type="text" class="form-control form-control-sm text-center border-0"
+                        value="${cart.qty}">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                              <i class="fa fa-plus"></i>
+                            </button>
+                        </span>
+                      </div>
+                    </td>
+                    <td><span class="price">${cart.qty*product[0].price}</span><br>
+                    </td>
+                    <td>무료</td>
+                    <td>
+                        <button class="btn btn-md rounded-circle bg-light border mt-4">
+                          <i class="fa fa-times text-danger"></i>
+                        </button>
+                    </td>
+                </tr>
+              </tr>`
+      document.querySelector('table.cart__list thead').insertAdjacentHTML("beforeend", template);
+    });
+
+    document.querySelectorAll('i.fa-plus').forEach(plusIcon => {
+      plusIcon.addEventListener('click', e => {
+        let pcode = e.target.closest('tr').getAttribute('data-pcode');
+        let currentQty = parseInt(e.target.closest('div.quantity').children[1].value);
+        currentQty++;
+        e.target.closest('div.quantity').children[1].value = currentQty;
+
+        let price = e.target.closest('tr');
+        console.log(price.children[1].children[2].innerText);
+
+        e.target.closest('tr').children[3].firstElementChild.innerText = price.children[1].children[2].innerText * currentQty +
+          "";console.log( e.target.closest('tr').children[3].firstElementChild.innerText)
+        saveQty(logId, pcode, 1);
+      });
+    })
+
+
+    document.querySelectorAll('i.fa-minus').forEach(minusIcon => {
+      minusIcon.addEventListener('click', e => {
+        let pcode = e.target.closest('tr').getAttribute('data-pcode');
+        let currentQty = parseInt(e.target.closest('div.quantity').children[1].value);
+        currentQty--;
+        e.target.closest('div.quantity').children[1].value = currentQty;
+
+        let price = e.target.closest('tr');
+        console.log(price.children[1].children[2].innerText);
+
+        e.target.closest('tr').children[3].firstElementChild.innerText = price.children[1].children[2].innerText * currentQty +
+          "";console.log( e.target.closest('tr').children[3].firstElementChild.innerText)
+
+        saveQty(logId, pcode, -1);
+      });
+    })
+
+    document.querySelectorAll('i.fa-times').forEach(icon => {
+      icon.addEventListener('click', e => {
+        let pcode = e.target.closest('tr').getAttribute('data-pcode');
+        e.target.closest('tr').remove();
+        totalsum()
+
+        removeCart(logId, pcode);
+        saveQty(logId, pcode, -1);
+      });
+    });
+
+    function saveQty(logId, pcode, qty) {
+      cartData.forEach(cart => {
+        if (cart.id == logId && cart.pcode == pcode) {
+          cart.qty += qty;
+        }
+      });
+      localStorage.setItem('cartData', JSON.stringify(cartData));
+    }
+
+    function removeCart(logId, pcode) {
+      cartData = cartData.filter(cart => !(cart.pcode == pcode && cart.id == logId));
+      localStorage.setItem('cartData', JSON.stringify(cartData));
+    }
+  </script>
+</body>
+
+</html>
