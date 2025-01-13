@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여제</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    const data = [
+      {"area" : "서울", "dept" : "영업", "name" : "무대리"},
+      {"area" : "부산", "dept" : "영업", "name" : "홍과장"},
+      {"area" : "대전", "dept" : "생산", "name" : "박사장"},
+      {"area" : "서울", "dept" : "생산", "name" : "김부장"}
+    ];
+
+  </script>
+  <div id="list">
+    <ul>
+      <!-- 근무지역이 서울인 사원이름-->
+    </ul>
+    <ul>
+      <!-- 근무하는 부서가 생산인 사원이름-->
+    </ul>
+  </div>
+  <script>
+
+    $(data).each(function(idx, value){
+        if(value.area == "서울"){
+          let liTag = $('<li></li>');
+          liTag.text(value.name);
+          $('#list ul:eq(0)').append(liTag);
+          return value.name;
+        }
+    });
+
+    $(data).each(function(idx, value){
+      if(value.dept == "생산"){
+        let litag = $('<li></li>');
+        litag.text(value.name);
+        $('#list ul:eq(1)').append(litag);
+        return value.name;
+      }
+    });
+
+  </script>
+</body>
+</html>
